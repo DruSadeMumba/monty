@@ -88,8 +88,8 @@ void pstr(stack_t **stack, unsigned int line);
 void rotl(stack_t **stack, unsigned int line);
 void rotr(stack_t **stack, unsigned int line);
 void pchar(stack_t **stack, unsigned int line);
-void stack(stack_handler *top, unsigned int line);
-void queue(stack_handler *top, unsigned int line);
+void stacks(stack_handler *top, unsigned int line);
+void queues(stack_handler *top, unsigned int line);
 void malloc_fail(void);
 
 #endif
