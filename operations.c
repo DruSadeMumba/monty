@@ -2,14 +2,14 @@
 
 /**
  * adds - add two ints
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void adds(stack_t **stack, unsigned int line)
 {
 	int num = 0, sum = 0;
-	stack_t *new, *pos0, *pos1,*top;
-	
+	stack_t *new, *pos0, *pos1, *top;
+
 	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
@@ -37,7 +37,7 @@ void adds(stack_t **stack, unsigned int line)
 
 /**
  * subs - subtract two ints
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void subs(stack_t **stack, unsigned int line)
@@ -72,7 +72,7 @@ void subs(stack_t **stack, unsigned int line)
 
 /**
  * divs - divide two ints
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void divs(stack_t **stack, unsigned int line)
@@ -113,7 +113,7 @@ void divs(stack_t **stack, unsigned int line)
 
 /**
  * muls - multipy two ints
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void muls(stack_t **stack, unsigned int line)
@@ -148,14 +148,14 @@ void muls(stack_t **stack, unsigned int line)
 
 /**
  * mods - get remainder of dividing two ints
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void mods(stack_t **stack, unsigned int line)
 {
 	int num = 0, mod = 0;
 	stack_t *new, *pos0, *pos1, *top;
-	
+
 	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);

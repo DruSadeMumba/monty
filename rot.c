@@ -2,7 +2,7 @@
 
 /**
  * rotl - rotates the stack to the top
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void rotl(stack_t **stack, unsigned int line)
@@ -22,7 +22,7 @@ void rotl(stack_t **stack, unsigned int line)
 
 /**
  * rotr - rotates the stack to the bottom
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void rotr(stack_t **stack, unsigned int line)

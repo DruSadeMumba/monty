@@ -2,7 +2,7 @@
 
 /**
  * pchar - print char
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void pchar(stack_t **stack, unsigned int line)
@@ -27,7 +27,7 @@ void pchar(stack_t **stack, unsigned int line)
 
 /**
  * pstr - print str
- * @top: pointer
+ * @stack: pointer
  * @line: line number
  */
 void pstr(stack_t **stack, unsigned int line)
