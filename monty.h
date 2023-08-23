@@ -15,9 +15,9 @@
  **/
 typedef struct stack_s
 {
-int n;
-struct stack_s *prev;
-struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct stack - pointer to the top of the head
@@ -27,7 +27,7 @@ struct stack_s *next;
 **/
 typedef struct stack
 {
-stack_t *top;
+	stack_t *top;
 } stack_handler;
 
 /**
@@ -41,10 +41,10 @@ stack_t *top;
  **/
 typedef struct file_handler
 {
-char *_args;
-char *inside;
-FILE *file;
-int value;
+	char *_args;
+	char *inside;
+	FILE *file;
+	int value;
 } value_t;
 
 extern value_t data_set;
@@ -59,8 +59,8 @@ extern value_t data_set;
  **/
 typedef struct instruction_s
 {
-char *opcode;
-void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
