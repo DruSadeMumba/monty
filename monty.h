@@ -1,11 +1,14 @@
 #ifndef MONTY_SHELL
 #define MONTY_SHELL
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
-#include <unistd.h>
+#include <fcntl.h>
 #include <ctype.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -90,7 +93,3 @@ void queue(stack_handler *top, unsigned int line);
 void malloc_fail(void);
 
 #endif
-
-
-
-
