@@ -72,12 +72,14 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-void push(stack_handler *top, unsigned int line);
-void pall(stack_handler *top, unsigned int line);
-void pop(stack_handler *top, unsigned int line);
-void pint(stack_handler *top, unsigned int line);
-void swap(stack_handler *top, unsigned int line);
+void pop(stack_handler *handler, unsigned int line);
+void add_node(stack_handler *handler, int n);
+void stack_free(stack_handler *handler);
+void push(stack_handler *handler, unsigned int line);
+void pall(stack_handler *handler, unsigned int line);
+void pop(stack_handler *handler, unsigned int line);
+void pint(stack_handler *handler, unsigned int line);
+void swap(stack_handler *handler, unsigned int line);
 void adds(stack_t **stack, unsigned int line);
 void nop(stack_handler *top, unsigned int line);
 void subs(stack_t **stack, unsigned int line);
