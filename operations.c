@@ -172,7 +172,7 @@ void mods(stack_t **stack, unsigned int line)
 		/*free*/
 		exit(EXIT_FAILURE);
 	}
-	if (pos0-> == 0)
+	if (pos0->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
 		/*free*/
