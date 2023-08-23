@@ -61,7 +61,7 @@ void subs(stack_t **stack, unsigned int line)
 		/*free*/
 		exit(EXIT_FAILURE);
 	}
-	diff = pos0->n - pos1->n;
+	diff = pos1->n - pos0->n;
 	delete_dnodeint_at_index(stack, 0);
 	delete_dnodeint_at_index(stack, 0);
 	new = add_dnodeint(stack, diff);
@@ -93,6 +93,12 @@ void divs(stack_t **stack, unsigned int line)
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		/*free*/
+		exit(EXIT_FAILURE);
+	}
+	if (pos0->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line);
 		/*free*/
 		exit(EXIT_FAILURE);
 	}
@@ -166,7 +172,13 @@ void mods(stack_t **stack, unsigned int line)
 		/*free*/
 		exit(EXIT_FAILURE);
 	}
-	mod = pos0->n % pos1->n;
+	if (pos0-> == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line);
+		/*free*/
+		exit(EXIT_FAILURE);
+	}
+	mod = pos1->n % pos0->n;
 	delete_dnodeint_at_index(stack, 0);
 	delete_dnodeint_at_index(stack, 0);
 	new = add_dnodeint(stack, mod);
