@@ -1,8 +1,11 @@
 #ifndef MONTY_SHELL
 #define MONTY_SHELL
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "lists.h"
+#include <strings.h>
+#include <unistd.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -19,6 +22,9 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
+typedef stack_t dlistint_t;
+
 /**
  * struct stack - pointer to the top of the head
  * @top: pointer to the first node
@@ -69,18 +75,19 @@ void pall(stack_handler *top, unsigned int line);
 void pop(stack_handler *top, unsigned int line);
 void pint(stack_handler *top, unsigned int line);
 void swap(stack_handler *top, unsigned int line);
-void add(stack_handler *top, unsigned int line);
+void adds(stack_t **stack, unsigned int line);
 void nop(stack_handler *top, unsigned int line);
-void sub(stack_handler *top, unsigned int line);
-void div(stack_handler *top, unsigned int line);
-void mul(stack_handler *top, unsigned int line);
-void mod(stack_handler *top, unsigned int line);
+void subs(stack_t **stack, unsigned int line);
+void divs(stack_t **stack, unsigned int line);
+void muls(stack_t **stack, unsigned int line);
+void mods(stack_t **stack, unsigned int line);
 void pstr(stack_handler *top, unsigned int line);
 void rotl(stack_handler *top, unsigned int line);
 void rotr(stack_handler *top, unsigned int line);
 void pchar(stack_handler *top, unsigned int line);
 void stack(stack_handler *top, unsigned int line);
 void queue(stack_handler *top, unsigned int line);
+void malloc_fail(void);
 
 #endif
 
