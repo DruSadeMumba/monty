@@ -10,3 +10,13 @@ void nop(stack_handler *top, unsigned int line)
 	(void)top;
 	(void)line;
 }
+
+/**
+ * malloc_fail - malloc err msg
+ */
+void malloc_fail(void)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	/*free*/
+	exit(EXIT_FAILURE);
+}

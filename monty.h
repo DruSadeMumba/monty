@@ -2,7 +2,7 @@
 #define MONTY_SHELL
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "lists.h"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
