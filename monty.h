@@ -1,7 +1,13 @@
 #ifndef MONTY_SHELL
 #define MONTY_SHELL
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include <ctype.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <string.h>
 
 
 /**
@@ -72,7 +78,7 @@ void swap(stack_handler *top, unsigned int line);
 void add(stack_handler *top, unsigned int line);
 void nop(stack_handler *top, unsigned int line);
 void sub(stack_handler *top, unsigned int line);
-void div(stack_handler *top, unsigned int line);
+void div_func(stack_handler *top, unsigned int line);
 void mul(stack_handler *top, unsigned int line);
 void mod(stack_handler *top, unsigned int line);
 void pstr(stack_handler *top, unsigned int line);
