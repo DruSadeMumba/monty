@@ -25,7 +25,7 @@ void push(stack_t **stack, unsigned int line)
 
 	if (data_set._args && data_set._args[0] != '\0')
 	{
-		if (data_set._args[0] == '-' || isdigit(data_set._args[0]))
+		if (data_set._args[0] == '-' || (data_set._args[0] <= 57 || data_set._args[0] >= 48))
 		{
 			while (data_set._args[i] != '\0')
 			{
