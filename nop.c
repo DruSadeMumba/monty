@@ -5,7 +5,7 @@
  * @top: pointer
  * @line: line in file
  */
-void nop(stack_handler *top, unsigned int line)
+void nop(stack_t **top, unsigned int line)
 {
 	(void)top;
 	(void)line;

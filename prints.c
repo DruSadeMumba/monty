@@ -13,13 +13,17 @@ void pchar(stack_t **stack, unsigned int line)
 	if (!top)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if (top->n < 0 || top->n > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", top->n);
@@ -36,20 +40,12 @@ void pstr(stack_t **stack, unsigned int line)
 
 	top = *stack;
 	(void)line;
-	if (!top)
-	{
-		printf("\n");
-		return;
-	}
 	while (top)
 	{
-		if (top->n > 0 || top->n <= 127)
-		{
-			printf("%c", top->n);
-			top = top->next;
-		}
-		else
+		if (top->n <= 0 || top->n > 127)
 			break;
+		printf("%c", top->n);
+		top = top->next;
 	}
 	printf("\n");
 }

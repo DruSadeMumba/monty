@@ -72,26 +72,27 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void pop(stack_handler *handler, unsigned int line);
-void add_node(stack_handler *handler, int n);
-void stack_free(stack_handler *handler);
-void push(stack_handler *handler, unsigned int line);
-void pall(stack_handler *handler, unsigned int line);
-void pop(stack_handler *handler, unsigned int line);
-void pint(stack_handler *handler, unsigned int line);
-void swap(stack_handler *handler, unsigned int line);
-void adds(stack_t **stack, unsigned int line);
-void nop(stack_handler *top, unsigned int line);
-void subs(stack_t **stack, unsigned int line);
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
+void pop(stack_t **stack, unsigned int line);
+void add_node(stack_handler *top, int n);
+void stack_free(stack_t *handler);
+void push(stack_t **stack, unsigned int line);
+void pall(stack_t **stack, unsigned int line);
+void pop(stack_t **stack, unsigned int line);
+void pint(stack_t **stack, unsigned int line);
+void swap(stack_t **stack, unsigned int line);
+void add(stack_t **stack, unsigned int line);
+void nop(stack_t **stack, unsigned int line);
+void sub(stack_t **stack, unsigned int line);
 void divs(stack_t **stack, unsigned int line);
-void muls(stack_t **stack, unsigned int line);
-void mods(stack_t **stack, unsigned int line);
+void mul(stack_t **stack, unsigned int line);
+void mod(stack_t **stack, unsigned int line);
 void pstr(stack_t **stack, unsigned int line);
 void rotl(stack_t **stack, unsigned int line);
 void rotr(stack_t **stack, unsigned int line);
 void pchar(stack_t **stack, unsigned int line);
-void stacks(stack_handler *top, unsigned int line);
-void queues(stack_handler *top, unsigned int line);
+void stacks(stack_t **stack, unsigned int line);
+void queue(stack_t **stack, unsigned int line);
 void malloc_fail(void);
 
 #endif

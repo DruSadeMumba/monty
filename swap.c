@@ -5,17 +5,19 @@
  *    * @line: line to be printed
  *    **/
 
-void swap(stack_handler *handler, unsigned int line)
+void swap(stack_t **handler, unsigned int line)
 {
-	stack_t *head = handler->top;
+	stack_t *head;
 	int temp;
+
+	head = *handler;
 
 	if (head == NULL || head->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		fclose(data_set.file);
 		free(data_set.inside);
-		free_stack(handler->top);
+		stack_free(*handler);
 		exit(EXIT_FAILURE);
 	}
 

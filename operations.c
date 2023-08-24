@@ -1,29 +1,27 @@
 #include "lists.h"
+#include "monty.h"
 
 /**
- * adds - add two ints
+ * add - add two ints
  * @stack: pointer
  * @line: line number
  */
-void adds(stack_t **stack, unsigned int line)
+void add(stack_t **stack, unsigned int line)
 {
 	int num = 0, sum = 0;
-	stack_t *new, *pos0, *pos1, *top;
+	stack_t *new, *pos0, *pos1;
 
-	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
 	pos1 = get_dnodeint_at_index(*stack, 1);
 
-	while (*stack)
-	{
-		top = top->next;
-		num++;
-	}
+	num = dlistint_len(*stack);
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	sum = pos0->n + pos1->n;
@@ -36,29 +34,26 @@ void adds(stack_t **stack, unsigned int line)
 }
 
 /**
- * subs - subtract two ints
+ * sub - subtract two ints
  * @stack: pointer
  * @line: line number
  */
-void subs(stack_t **stack, unsigned int line)
+void sub(stack_t **stack, unsigned int line)
 {
 	int num = 0, diff = 0;
-	stack_t *new, *pos0, *pos1, *top;
+	stack_t *new, *pos0, *pos1;
 
-	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
 	pos1 = get_dnodeint_at_index(*stack, 1);
 
-	while (*stack)
-	{
-		top = top->next;
-		num++;
-	}
+	num = dlistint_len(*stack);
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	diff = pos1->n - pos0->n;
@@ -78,28 +73,27 @@ void subs(stack_t **stack, unsigned int line)
 void divs(stack_t **stack, unsigned int line)
 {
 	int num = 0, div = 0;
-	stack_t *new, *pos0, *pos1, *top;
+	stack_t *new, *pos0, *pos1;
 
-	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
 	pos1 = get_dnodeint_at_index(*stack, 1);
 
-	while (*stack)
-	{
-		top = top->next;
-		num++;
-	}
+	num = dlistint_len(*stack);
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if (pos0->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	div = pos0->n / pos1->n;
@@ -112,29 +106,26 @@ void divs(stack_t **stack, unsigned int line)
 }
 
 /**
- * muls - multipy two ints
+ * mul - multipy two ints
  * @stack: pointer
  * @line: line number
  */
-void muls(stack_t **stack, unsigned int line)
+void mul(stack_t **stack, unsigned int line)
 {
 	int num = 0, prod = 0;
-	stack_t *new, *pos0, *pos1, *top;
+	stack_t *new, *pos0, *pos1;
 
-	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
 	pos1 = get_dnodeint_at_index(*stack, 1);
 
-	while (*stack)
-	{
-		top = top->next;
-		num++;
-	}
+	num = dlistint_len(*stack);
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	prod = pos0->n * pos1->n;
@@ -147,35 +138,34 @@ void muls(stack_t **stack, unsigned int line)
 }
 
 /**
- * mods - get remainder of dividing two ints
+ * mod - get remainder of dividing two ints
  * @stack: pointer
  * @line: line number
  */
-void mods(stack_t **stack, unsigned int line)
+void mod(stack_t **stack, unsigned int line)
 {
 	int num = 0, mod = 0;
-	stack_t *new, *pos0, *pos1, *top;
+	stack_t *new, *pos0, *pos1;
 
-	top = *stack;
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
 	pos1 = get_dnodeint_at_index(*stack, 0);
 
-	while (*stack)
-	{
-		top = top->next;
-		num++;
-	}
+	num = dlistint_len(*stack);
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if (pos0->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
-		/*free*/
+		fclose(data_set.file);
+		free(data_set.inside);
+		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	mod = pos1->n % pos0->n;

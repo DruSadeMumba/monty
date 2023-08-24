@@ -5,7 +5,7 @@
  * @top: pointer
  * @line: line num
  */
-void stacks(stack_handler *top, unsigned int line)
+void stacks(stack_t **top, unsigned int line)
 {
 	(void)top;
 	(void)line;
@@ -13,11 +13,11 @@ void stacks(stack_handler *top, unsigned int line)
 }
 
 /**
- * queues - top of the stack becomes the front of the queue
+ * queue - top of the stack becomes the front of the queue
  * @top: pointer
  * @line: line num
  */
-void queues(stack_handler *top, unsigned int line)
+void queue(stack_t **top, unsigned int line)
 {
 	(void)top;
 	(void)line;

@@ -1,23 +1,23 @@
 #include "monty.h"
 /**
  *  * pop - removing node from stack
- *   * @handler: pointe to the first node
+ *   * @stack: pointer to the first node
  *    * @line: line to be printed
  *    **/
 
-void pop(stack_handler *handler, unsigned int line)
+void pop(stack_t **stack, unsigned int line)
 {
-	stack_t *first_node = handler->top;
+	stack_t *first_node = *stack;
 
 	if (first_node == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
 		fclose(data_set.file);
 		free(data_set.inside);
-		stack_free(handler);
+		stack_free(first_node);
 		exit(EXIT_FAILURE);
 	}
 
-	handler->top = first_node->next;
+	*stack = first_node->next;
 	free(first_node);
 }
