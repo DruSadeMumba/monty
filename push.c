@@ -15,7 +15,7 @@ void push_err(stack_t **stack, unsigned int line)
 
 /**
  * push - pushing a node to the stack
- * @handler: pointer to the first node
+ * @stack: pointer to the first node
  * @line: line on which push was found
  */
 
