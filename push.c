@@ -23,9 +23,9 @@ void push(stack_t **stack, unsigned int line)
 	int data;
 	int i = 0, flag = 0;
 
-	if (data_set._args)
+	if (data_set._args && data_set._args[0] != '\0')
 	{
-		if (data_set._args[0] == '-')
+		if (data_set._args[0] == '-' || isdigit(data_set._args[0]))
 			i++;
 		for (; data_set._args[i] != '\0'; i++)
 		{
