@@ -16,7 +16,7 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 	instruction_t opst[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint},
 		{"pop", pop}, {"swap", swap}, {"add", add},
-		{"nop", nop}, {"sub", swap}, {"div", divs},
+		{"nop", nop}, {"sub", sub}, {"div", divs},
 		{"mul", mul}, {"mod", mod}, {"pchar", pchar},
 		{"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
 		{"queue", queue}, {"stack", stacks},
@@ -29,13 +29,14 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 		return (0);
 	data_set._args = strtok(NULL, " \n\t");
 
-	for (i = 0; opst[i].opcode != NULL; i++)
+	while (opst[i].opcode && op_code)
 	{
 		if (strcmp(op_code, opst[i].opcode) == 0)
 		{
 			opst[i].f(stack, line);
 			return (0);
 		}
+		i++;
 	}
 	if (op_code && opst[i].opcode == NULL)
 	{
