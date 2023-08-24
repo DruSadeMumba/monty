@@ -29,7 +29,7 @@ void push(stack_t **stack, unsigned int line)
 			i++;
 		for (; data_set._args[i] != '\0'; i++)
 		{
-			if (!isdigit(data_set._args[i]))
+			if (data_set._args[i] > 57 || data_set._args[i] < 48)
 				push_err(stack, line);
 		}
 	} else
