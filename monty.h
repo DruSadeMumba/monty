@@ -74,6 +74,7 @@ typedef struct instruction_s
 int exec_func(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void pop(stack_t **stack, unsigned int line);
 void add_node(stack_t **stack, int data);
+void add_node_end(stack_t **stack, int data);
 void stack_free(stack_t *handler);
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);

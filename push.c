@@ -30,15 +30,15 @@ void push(stack_t **stack, unsigned int line)
 		for (; data_set._args[i] != '\0'; i++)
 		{
 			if (data_set._args[i] > 57 || data_set._args[i] < 48)
-				flag = 0;
+				flag = 1;
 		}
-		if (flag == 0)
+		if (flag == 1)
 			push_err(stack, line);
 	} else
 		push_err(stack, line);
 	data = atoi(data_set._args);
 	if (data_set._args == 0)
-		add_dnodeint(stack, data);
+		add_node(stack, data);
 	else
-		add_dnodeint_end(stack, data);
+		add_node_end(stack, data);
 }
