@@ -17,9 +17,9 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 		{"push", push}, {"pall", pall}, {"pint", pint},
 		{"pop", pop}, {"swap", swap}, {"add", add},
 		{"nop", nop}, {"sub", swap}, {"div", divs},
-		{"mul", muls}, {"mod", mods}, {"pchar", pchar},
+		{"mul", mul}, {"mod", mod}, {"pchar", pchar},
 		{"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
-		{"queue", queues}, {"stack", stacks},
+		{"queue", queue}, {"stack", stacks},
 		{NULL, NULL}
 	};
 
@@ -41,7 +41,7 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, op_code);
 		fclose(file);
-		free(line);
+		free(inside);
 		stack_free(*stack);
 		exit(EXIT_FAILURE);
 	}

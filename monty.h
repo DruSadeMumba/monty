@@ -71,7 +71,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
+int exec_func(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void pop(stack_t **stack, unsigned int line);
 void add_node(stack_t **stack, int data);
 void stack_free(stack_t *handler);
