@@ -1,4 +1,5 @@
 #include "monty.h"
+#include "lists.h"
 /**
  *  * main - the main program for monty
  *   * @argc: count arguments passed to the program
