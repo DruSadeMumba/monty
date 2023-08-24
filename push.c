@@ -18,10 +18,10 @@ void push_err(stack_t **stack, unsigned int line)
  * @stack: pointer to the first node
  * @line: line on which push was found
  */
-
 void push(stack_t **stack, unsigned int line)
 {
-	int data, i = 0;
+	int data;
+	int i = 0;
 
 	if (data_set._args != NULL && data_set._args[0] != '\0')
 	{
