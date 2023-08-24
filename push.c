@@ -21,7 +21,7 @@ void push_err(stack_t **stack, unsigned int line)
 void push(stack_t **stack, unsigned int line)
 {
 	int data;
-	int i = 0;
+	int i = 0, flag = 0;
 
 	if (data_set._args)
 	{
@@ -30,8 +30,10 @@ void push(stack_t **stack, unsigned int line)
 		for (; data_set._args[i] != '\0'; i++)
 		{
 			if (data_set._args[i] > 57 || data_set._args[i] < 48)
-				push_err(stack, line);
+				flag = 0;
 		}
+		if (flag == 0)
+			push_err(stack, line);
 	} else
 		push_err(stack, line);
 	data = atoi(data_set._args);
