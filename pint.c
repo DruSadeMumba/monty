@@ -14,7 +14,7 @@ void pint(stack_handler *handler, unsigned int line)
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line);
 		fclose(data_set.file);
 		free(data_set.inside);
-		stack_free(handler->top);
+		stack_free(handler);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", first_node->n);

@@ -15,7 +15,7 @@ void swap(stack_handler *handler, unsigned int line)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		fclose(data_set.file);
 		free(data_set.inside);
-		free_stack(handler->top);
+		stack_free(handler);
 		exit(EXIT_FAILURE);
 	}
 

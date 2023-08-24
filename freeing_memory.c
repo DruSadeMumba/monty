@@ -1,4 +1,4 @@
-nclude "monty.h"
+#include "monty.h"
 /**
  *  * free_stack - freeing up the stack given
  *   * @handler: pointer to the first node
