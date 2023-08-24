@@ -20,7 +20,7 @@ void push(stack_handler *handler, unsigned int line)
 					fprintf(stderr, "L%d: usage: push integer\n", line);
 					fclose(data_set.file);
 					free(data_set.inside);
-					stack_free(handler->top);
+					stack_free(handler);
 					exit(EXIT_FAILURE);
 				}
 				i++;
@@ -34,7 +34,7 @@ void push(stack_handler *handler, unsigned int line)
 			fprintf(stderr, "L%d: usage: push integer\n", line);
 			fclose(data_set.file);
 			free(data_set.inside);
-			stack_free(handler->top);
+			stack_free(handler);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -43,7 +43,7 @@ void push(stack_handler *handler, unsigned int line)
 		fprintf(stderr, "L%d: usage: push integer\n", line);
 		fclose(data_set.file);
 		free(data_set.inside);
-		stack_free(handler->top);
+		stack_free(handler);
 		exit(EXIT_FAILURE);
 	}
 }
