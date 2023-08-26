@@ -41,10 +41,7 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 	if (op_code && opst[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, op_code);
-		fclose(file);
-		free(inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	return (1);
 }
