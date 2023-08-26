@@ -38,5 +38,5 @@ void rotr(stack_t **stack, unsigned int line)
 	top = get_dnodeint_at_index(*stack, len - 1);
 	num = top->n;
 	delete_dnodeint_at_index(stack, len - 1);
-	add_dnodeint_end(stack, num);
+	add_dnodeint(stack, num);
 }
