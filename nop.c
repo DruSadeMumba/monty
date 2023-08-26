@@ -20,3 +20,15 @@ void malloc_fail(void)
 	/*free*/
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * op_err - err handler
+ * @stack: pointer
+ */
+void op_err(stack_t **stack)
+{
+	fclose(data_set.file);
+	free(data_set.inside);
+	stack_free(*stack);
+	exit(EXIT_FAILURE);
+}

@@ -76,6 +76,7 @@ void pop(stack_t **stack, unsigned int line);
 void add_node(stack_t **stack, int data);
 void add_node_end(stack_t **stack, int data);
 void stack_free(stack_t *handler);
+void op_err(stack_t **stack);
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);
 void pop(stack_t **stack, unsigned int line);

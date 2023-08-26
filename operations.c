@@ -19,10 +19,7 @@ void add(stack_t **stack, unsigned int line)
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	sum = pos0->n + pos1->n;
 	delete_dnodeint_at_index(stack, 0);
@@ -51,10 +48,7 @@ void sub(stack_t **stack, unsigned int line)
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	diff = pos1->n - pos0->n;
 	delete_dnodeint_at_index(stack, 0);
@@ -83,20 +77,14 @@ void divs(stack_t **stack, unsigned int line)
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	if (pos0->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
-	div = pos0->n / pos1->n;
+	div = pos1->n / pos0->n;
 	delete_dnodeint_at_index(stack, 0);
 	delete_dnodeint_at_index(stack, 0);
 	new = add_dnodeint(stack, div);
@@ -123,10 +111,7 @@ void mul(stack_t **stack, unsigned int line)
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	prod = pos0->n * pos1->n;
 	delete_dnodeint_at_index(stack, 0);
@@ -149,24 +134,18 @@ void mod(stack_t **stack, unsigned int line)
 
 	new = NULL;
 	pos0 = get_dnodeint_at_index(*stack, 0);
-	pos1 = get_dnodeint_at_index(*stack, 0);
+	pos1 = get_dnodeint_at_index(*stack, 1);
 
 	num = dlistint_len(*stack);
 	if (num < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	if (pos0->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	mod = pos1->n % pos0->n;
 	delete_dnodeint_at_index(stack, 0);
