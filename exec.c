@@ -23,6 +23,7 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 		{NULL, NULL}
 	};
 
+	(void)file;
 	op_code = strtok(inside, " \n\t");
 
 	if (op_code && op_code[0] == '#')
