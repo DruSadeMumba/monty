@@ -25,13 +25,14 @@ void push(stack_t **stack, unsigned int line)
 
 	if (data_set._args && data_set._args[0] != '\0')
 	{
-		if (data_set._args[0] == '-' || (data_set._args[0] <= 57 || data_set._args[0] >= 48))
+		if (isdigit(data_set._args[0]) || data_set._args[0] == 45)
 		{
 			while (data_set._args[i] != '\0')
 			{
-				if (data_set._args[i] > 57 || data_set._args[i] < 48)
+				if (isdigit(data_set._args[i]) || data_set._args[0] == 45)
+					i++;
+				else
 					push_err(stack, line);
-				i++;
 			}
 			data = atoi(data_set._args);
 			add_dnodeint(stack, data);
