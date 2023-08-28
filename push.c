@@ -22,10 +22,13 @@ void push(stack_t **stack, unsigned int line)
 					push_err(stack, line);
 			}
 			data = atoi(data_set._args);
-			add_dnodeint(stack, data);
 		}
 		else
 			push_err(stack, line);
 	} else
 		push_err(stack, line);
+	if (data_set.value == 0)
+		add_dnodeint(stack, data);
+	else
+		add_dnodeint_end(stack, data);
 }
