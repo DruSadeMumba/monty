@@ -2,7 +2,7 @@
 
 /**
  * swap - swapping two elements
- * @handler: pointer to the first element
+ * @stack: pointer to the first element
  * @line: line to be printed
  */
 
