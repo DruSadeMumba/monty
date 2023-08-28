@@ -61,8 +61,6 @@ typedef struct instruction_s
 
 int exec_func(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void pop(stack_t **stack, unsigned int line);
-void stack_free(stack_t *stack);
-void op_err(stack_t **stack);
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);
 void pop(stack_t **stack, unsigned int line);
@@ -80,6 +78,8 @@ void rotr(stack_t **stack, unsigned int line);
 void pchar(stack_t **stack, unsigned int line);
 void stacks(stack_t **stack, unsigned int line);
 void queue(stack_t **stack, unsigned int line);
+void op_err(stack_t **stack);
+void stack_free(stack_t *stack);
 void malloc_fail(void);
 
 /*list funcs*/
