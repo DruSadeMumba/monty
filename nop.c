@@ -17,7 +17,6 @@ void nop(stack_t **top, unsigned int line)
 void malloc_fail(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	/*free*/
 	exit(EXIT_FAILURE);
 }
 
