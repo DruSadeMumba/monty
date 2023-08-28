@@ -1,13 +1,13 @@
 #include "monty.h"
-#include "lists.h"
+
 /**
- *  * exec_func - execute the opcode found in file
- *   * @inside: content read from file
- *    * @stack: top of the stack
- *     * @line: line to be printed from the file
- *      * @file: file to be read by monty intepreter
- *       * Return: execute the opcode
- *       **/
+ * exec_func - execute the opcode found in file
+ * @inside: content read from file
+ * @stack: top of the stack
+ * @line: line to be printed from the file
+ * @file: file to be read by monty intepreter
+ * Return: execute the opcode
+ */
 
 int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 {

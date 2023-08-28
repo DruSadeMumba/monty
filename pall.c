@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * pall - print value from that start of stack
  * @stack: pointer to the first node

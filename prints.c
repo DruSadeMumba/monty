@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "monty.h"
 
 /**
  * pchar - print char
@@ -13,18 +13,12 @@ void pchar(stack_t **stack, unsigned int line)
 	if (!top)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	if (top->n < 0 || top->n > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
-		fclose(data_set.file);
-		free(data_set.inside);
-		stack_free(*stack);
-		exit(EXIT_FAILURE);
+		op_err(stack);
 	}
 	printf("%c\n", top->n);
 }

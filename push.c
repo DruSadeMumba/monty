@@ -1,4 +1,5 @@
-#include "lists.h"
+#include "monty.h"
+
 /**
  * push_err - push err
  * @stack: pointer
@@ -7,10 +8,7 @@
 void push_err(stack_t **stack, unsigned int line)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line);
-	fclose(data_set.file);
-	free(data_set.inside);
-	stack_free(*stack);
-	exit(EXIT_FAILURE);
+	op_err(stack);
 }
 
 /**

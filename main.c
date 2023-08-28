@@ -1,12 +1,12 @@
 #include "monty.h"
-#include "lists.h"
+
 value_t data_set = {NULL, NULL, NULL, 0};
 /**
- *  * main - the main program for monty
- *   * @argc: count arguments passed to the program
- *    * @argv: the pointer to passed argument
- *     * Return: Always return 1 on success
- *     **/
+ * main - the main program for monty
+ * @argc: count arguments passed to the program
+ * @argv: the pointer to passed argument
+ * Return: Always return 1 on success
+ */
 
 int main(int argc, char *argv[])
 {
