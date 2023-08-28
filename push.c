@@ -22,8 +22,7 @@ void push(stack_t **stack, unsigned int line)
 					push_err(stack, line);
 			}
 			data = atoi(data_set._args);
-		}
-		else
+		} else
 			push_err(stack, line);
 	} else
 		push_err(stack, line);
