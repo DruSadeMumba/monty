@@ -6,11 +6,11 @@
  * @n: value
  * Return: address
  */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	dlistint_t *new, *h;
+	stack_t *new, *h;
 
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(stack_t));
 	if (!head || !new)
 		return (NULL);
 

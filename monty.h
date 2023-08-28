@@ -26,19 +26,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-typedef stack_t dlistint_t;
-
-/**
- * struct stack - pointer to the top of the head
- * @top: pointer to the first node
- * Description: this function is pointing to the head
- * of the node
-**/
-typedef struct stack
-{
-	stack_t *top;
-} stack_handler;
-
 /**
  * struct file_handler - variables -args, file, line content
  * @_args: value
@@ -74,7 +61,7 @@ typedef struct instruction_s
 
 int exec_func(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void pop(stack_t **stack, unsigned int line);
-void stack_free(stack_t *handler);
+void stack_free(stack_t *stack);
 void op_err(stack_t **stack);
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);
@@ -96,12 +83,11 @@ void queue(stack_t **stack, unsigned int line);
 void malloc_fail(void);
 
 /*list funcs*/
-size_t print_dlistint(const dlistint_t *h);
-size_t dlistint_len(const dlistint_t *h);
-dlistint_t *add_dnodeint(dlistint_t **head, const int n);
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+size_t dlistint_len(const stack_t *h);
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+stack_t *get_dnodeint_at_index(stack_t *head, unsigned int index);
+stack_t *insert_dnodeint_at_index(stack_t **h, unsigned int idx, int n);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 
 #endif
