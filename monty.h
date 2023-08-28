@@ -78,6 +78,7 @@ void rotr(stack_t **stack, unsigned int line);
 void pchar(stack_t **stack, unsigned int line);
 void stacks(stack_t **stack, unsigned int line);
 void queue(stack_t **stack, unsigned int line);
+void push_err(stack_t **stack, unsigned int line);
 void op_err(stack_t **stack);
 void stack_free(stack_t *stack);
 void malloc_fail(void);

@@ -1,17 +1,6 @@
 #include "monty.h"
 
 /**
- * push_err - push err
- * @stack: pointer
- * @line: line number
- */
-void push_err(stack_t **stack, unsigned int line)
-{
-	fprintf(stderr, "L%d: usage: push integer\n", line);
-	op_err(stack);
-}
-
-/**
  * push - pushing a node to the stack
  * @stack: pointer to the first node
  * @line: line on which push was found

@@ -39,7 +39,7 @@ int exec_func(char *inside, stack_t **stack, unsigned int line, FILE *file)
 		}
 		i++;
 	}
-	if (op_code && opst[i].opcode == NULL)
+	if (!op_code && opst[i].opcode)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, op_code);
 		op_err(stack);

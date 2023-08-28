@@ -31,3 +31,14 @@ void op_err(stack_t **stack)
 	stack_free(*stack);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * push_err - push err
+ * @stack: pointer
+ * @line: line number
+ */
+void push_err(stack_t **stack, unsigned int line)
+{
+	fprintf(stderr, "L%d: usage: push integer\n", line);
+	op_err(stack);
+}
