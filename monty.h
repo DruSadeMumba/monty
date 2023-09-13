@@ -59,7 +59,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int exec_func(char *content, stack_t **stack, unsigned int counter, FILE *file);
+int exec_func(char *content, stack_t **stack, unsigned int count, FILE *file);
 void pop(stack_t **stack, unsigned int line);
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);
